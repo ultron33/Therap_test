@@ -80,6 +80,7 @@ class HomeVC: UIViewController {
         print("Storing Data..")
         do {
             try context.save()
+            NotificationCenter.default.post(name: Notification.Name(Constants.shared.newUserSaved), object: nil)
         } catch {
             print("Storing data Failed")
         }

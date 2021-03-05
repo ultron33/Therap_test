@@ -12,6 +12,13 @@ class FavouritesVC: UIViewController {
     
     //MARK: - Properties
     
+    let titleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "FAVOURITE INFOS"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
     //------ Views -----//
     var favouriteView = HomeView()
     
@@ -30,14 +37,24 @@ class FavouritesVC: UIViewController {
         setupViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: Notification.Name(Constants.shared.newUserSaved), object: nil)
+    }
+    
     //MARK: - Functions
     
     // ======== Handle Views ======= //
     func setupViews(){
+        view.backgroundColor = .white
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(favouriteView)
         favouriteView.tableView.delegate = self
         favouriteView.tableView.dataSource = self
-        favouriteView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        favouriteView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     
@@ -67,7 +84,15 @@ class FavouritesVC: UIViewController {
             print("Fetching data Failed")
         }
     }
-
+    
+    //======= Refresh =======
+    @objc func refreshTableView(){
+        self.favNameArray.removeAll()
+        self.favDescriptionArray.removeAll()
+        self.favUrlArray.removeAll()
+        fetchData()
+        favouriteView.tableView.reloadData()
+    }
     
     //MARK: - BUtton Actions
 

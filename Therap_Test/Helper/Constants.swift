@@ -10,5 +10,7 @@ import CoreData
 import UIKit
 
 class Constants {
+    static let shared = Constants()
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let newUserSaved = "newUserSaved"
 }
