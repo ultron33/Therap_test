@@ -76,3 +76,46 @@ extension UIViewController{
         })
     }
 }
+
+
+extension UITextField{
+    
+    func textField(title: String = "", textColor: UIColor = UIColor.clear, fontStyle: UIFont? = nil, placeholderText: String = "" , placeHolderColor: UIColor = .black) -> UITextField{
+        let finalFont = fontStyle?.withSize(UIScreen.main.bounds.width>428 ? fontStyle!.pointSize*1.5 : fontStyle!.pointSize)
+        let field = UITextField()
+        field.font = finalFont
+        field.text = title
+        field.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: placeHolderColor])
+        field.textColor = textColor
+        field.translatesAutoresizingMaskIntoConstraints = false
+        return field
+    }
+}
+
+extension String {
+    var isReallyEmpty: Bool {
+        return self.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+}
+
+extension UITableView {
+    
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 17)
+        messageLabel.sizeToFit()
+        
+        self.backgroundView = messageLabel
+        self.separatorStyle = .none
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}
+

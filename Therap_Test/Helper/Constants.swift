@@ -12,5 +12,6 @@ import UIKit
 class Constants {
     static let shared = Constants()
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let newUserSaved = "newUserSaved"
+    let NEW_USER_SAVED = "newUserSaved"
+    let NEW_NOTES_SAVED = "newNotesSaved"
 }

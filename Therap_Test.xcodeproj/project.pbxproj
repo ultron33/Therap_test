@@ -25,6 +25,7 @@
 		BCAC232525F204E10057D64A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC232425F204E10057D64A /* HomeView.swift */; };
 		BCAC234D25F21C680057D64A /* Therap_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCAC234B25F21C680057D64A /* Therap_Test.xcdatamodeld */; };
 		BCAC235025F21FBD0057D64A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC234F25F21FBD0057D64A /* Constants.swift */; };
+		BCAC235425F22C340057D64A /* WriteNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC235325F22C340057D64A /* WriteNotesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BCAC232425F204E10057D64A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BCAC234C25F21C680057D64A /* Therap_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Therap_Test.xcdatamodel; sourceTree = "<group>"; };
 		BCAC234F25F21FBD0057D64A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BCAC235325F22C340057D64A /* WriteNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNotesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		BCAC22F425F1F0FE0057D64A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCAC235325F22C340057D64A /* WriteNotesVC.swift */,
 				BCAC22DF25F1F0DC0057D64A /* HomeVC.swift */,
 				BCAC230C25F1F6510057D64A /* FavouritesVC.swift */,
 				BCAC231125F1F6740057D64A /* NotesVC.swift */,
@@ -315,6 +318,7 @@
 			files = (
 				BCAC232525F204E10057D64A /* HomeView.swift in Sources */,
 				BCAC232225F1FF050057D64A /* GitInfo.swift in Sources */,
+				BCAC235425F22C340057D64A /* WriteNotesVC.swift in Sources */,
 				BCAC231925F1FBF40057D64A /* Webservices.swift in Sources */,
 				BCAC22E025F1F0DC0057D64A /* HomeVC.swift in Sources */,
 				BCAC235025F21FBD0057D64A /* Constants.swift in Sources */,

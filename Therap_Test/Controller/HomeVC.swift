@@ -21,6 +21,14 @@ class HomeVC: UIViewController {
     var urlArray = [String]()
     
     // ------- Views ----- //
+    
+    let titleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Home"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
     var homeView = HomeView()
 
     //MARK: - Initializers
@@ -33,10 +41,15 @@ class HomeVC: UIViewController {
     
     
     func setup_vews(){
+        view.backgroundColor = .white
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(homeView)
         homeView.tableView.delegate = self
         homeView.tableView.dataSource = self
-        homeView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        homeView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     // ====== Networking ===== //
@@ -80,7 +93,8 @@ class HomeVC: UIViewController {
         print("Storing Data..")
         do {
             try context.save()
-            NotificationCenter.default.post(name: Notification.Name(Constants.shared.newUserSaved), object: nil)
+            NotificationCenter.default.post(name: Notification.Name(Constants.shared.NEW_USER_SAVED), object: nil)
+            self.showToast(message: "Saved succesfully!", font: UIFont.systemFont(ofSize: 12), cardHight: 50, labelHeight: 50, labelWidth: 200)
         } catch {
             print("Storing data Failed")
         }
@@ -118,5 +132,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-}
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let deleteAction = UIContextualAction(style: .destructive, title: "Add Note") { (action, view, handler) in
+            print("add notes --- > ")
+            let vc = WriteNotesVC()
+            vc.name = self.nameArray[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
+        deleteAction.image = #imageLiteral(resourceName: "add note")
+        deleteAction.backgroundColor = .gray
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }}
 

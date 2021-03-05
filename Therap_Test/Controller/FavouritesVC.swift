@@ -39,7 +39,7 @@ class FavouritesVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: Notification.Name(Constants.shared.newUserSaved), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: Notification.Name(Constants.shared.NEW_USER_SAVED), object: nil)
     }
     
     //MARK: - Functions
@@ -54,7 +54,7 @@ class FavouritesVC: UIViewController {
         view.addSubview(favouriteView)
         favouriteView.tableView.delegate = self
         favouriteView.tableView.dataSource = self
-        favouriteView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        favouriteView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     
@@ -76,9 +76,9 @@ class FavouritesVC: UIViewController {
                 let details = data.value(forKey: "details") as! String
                 let url = data.value(forKey: "url") as! String
                 print("User Name is : "+userName+" and url is : "+url+"details is : "+details)
-                self.favNameArray.append(userName)
-                self.favDescriptionArray.append(details)
-                self.favUrlArray.append(url)
+                self.favNameArray.insert(userName, at: 0)
+                self.favDescriptionArray.insert(details, at: 0)
+                self.favUrlArray.insert(url, at: 0)
             }
         } catch {
             print("Fetching data Failed")
@@ -101,7 +101,13 @@ class FavouritesVC: UIViewController {
 
 extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favNameArray.count
+        if favNameArray.count == 0{
+            tableView.setEmptyMessage("No Notes saved!")
+            return favNameArray.count
+        }else{
+            tableView.setEmptyMessage("")
+            return favNameArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
