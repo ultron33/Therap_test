@@ -124,6 +124,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.controller = self
         cell.nameLabel.text = nameArray[indexPath.row]
         cell.DescriptionLabel.text = descriptionArray[indexPath.row]
+        cell.urlLabel.text = urlArray[indexPath.row]
         cell.bringSubviewToFront(cell.favourite_button)
         return cell
     }

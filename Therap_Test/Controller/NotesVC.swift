@@ -109,6 +109,7 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
         cell.controller = nil
         cell.nameLabel.text = notesNameArray[indexPath.row]
         cell.DescriptionLabel.text = noteArray[indexPath.row]
+        cell.urlLabel.isHidden = true
         cell.favourite_button.isHidden = true
         return cell
     }

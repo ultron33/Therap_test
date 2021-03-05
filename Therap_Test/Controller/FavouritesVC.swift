@@ -102,7 +102,7 @@ class FavouritesVC: UIViewController {
 extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if favNameArray.count == 0{
-            tableView.setEmptyMessage("No Notes saved!")
+            tableView.setEmptyMessage("No Favourites!")
             return favNameArray.count
         }else{
             tableView.setEmptyMessage("")
