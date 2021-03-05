@@ -55,3 +55,24 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+extension UIViewController{
+    func showToast(message : String, font: UIFont, cardHight: CGFloat, labelHeight: CGFloat, labelWidth: CGFloat, duration: Double = 2.0) {
+        let finalFont = font.withSize(UIScreen.main.bounds.width>428 ? font.pointSize*1.5 : font.pointSize)
+        let toastLabel = UILabel(frame: CGRect(x: (self.view.frame.size.width/2) - (labelWidth/2), y: self.view.frame.size.height - 100-cardHight-labelHeight-8, width: labelWidth, height: labelHeight))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = finalFont
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 0.5, delay: duration, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+}

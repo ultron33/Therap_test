@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		667FA673871A0FC66D107F0E /* Pods_Therap_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DC7D53B6F5268A540EF466 /* Pods_Therap_Test.framework */; };
 		BCAC22DC25F1F0DC0057D64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC22DB25F1F0DC0057D64A /* AppDelegate.swift */; };
 		BCAC22DE25F1F0DC0057D64A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC22DD25F1F0DC0057D64A /* SceneDelegate.swift */; };
 		BCAC22E025F1F0DC0057D64A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC22DF25F1F0DC0057D64A /* HomeVC.swift */; };
@@ -20,9 +21,16 @@
 		BCAC230D25F1F6510057D64A /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC230C25F1F6510057D64A /* FavouritesVC.swift */; };
 		BCAC231225F1F6740057D64A /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC231125F1F6740057D64A /* NotesVC.swift */; };
 		BCAC231925F1FBF40057D64A /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC231825F1FBF40057D64A /* Webservices.swift */; };
+		BCAC232225F1FF050057D64A /* GitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC232125F1FF050057D64A /* GitInfo.swift */; };
+		BCAC232525F204E10057D64A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC232425F204E10057D64A /* HomeView.swift */; };
+		BCAC234D25F21C680057D64A /* Therap_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCAC234B25F21C680057D64A /* Therap_Test.xcdatamodeld */; };
+		BCAC235025F21FBD0057D64A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC234F25F21FBD0057D64A /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B002D1CCA38150E9205AE8A /* Pods-Therap_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therap_Test.release.xcconfig"; path = "Target Support Files/Pods-Therap_Test/Pods-Therap_Test.release.xcconfig"; sourceTree = "<group>"; };
+		44DC7D53B6F5268A540EF466 /* Pods_Therap_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Therap_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		775FC57AA722C0227E9BDA7B /* Pods-Therap_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therap_Test.debug.xcconfig"; path = "Target Support Files/Pods-Therap_Test/Pods-Therap_Test.debug.xcconfig"; sourceTree = "<group>"; };
 		BCAC22D825F1F0DC0057D64A /* Therap_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Therap_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC22DB25F1F0DC0057D64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCAC22DD25F1F0DC0057D64A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 		BCAC230C25F1F6510057D64A /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
 		BCAC231125F1F6740057D64A /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		BCAC231825F1FBF40057D64A /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
+		BCAC232125F1FF050057D64A /* GitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInfo.swift; sourceTree = "<group>"; };
+		BCAC232425F204E10057D64A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BCAC234C25F21C680057D64A /* Therap_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Therap_Test.xcdatamodel; sourceTree = "<group>"; };
+		BCAC234F25F21FBD0057D64A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667FA673871A0FC66D107F0E /* Pods_Therap_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4011A3D213F9620A11DF2511 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				775FC57AA722C0227E9BDA7B /* Pods-Therap_Test.debug.xcconfig */,
+				0B002D1CCA38150E9205AE8A /* Pods-Therap_Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B05839039EF170C015DB4696 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44DC7D53B6F5268A540EF466 /* Pods_Therap_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BCAC22CF25F1F0DC0057D64A = {
 			isa = PBXGroup;
 			children = (
 				BCAC22DA25F1F0DC0057D64A /* Therap_Test */,
 				BCAC22D925F1F0DC0057D64A /* Products */,
+				4011A3D213F9620A11DF2511 /* Pods */,
+				B05839039EF170C015DB4696 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +108,7 @@
 				BCAC22F425F1F0FE0057D64A /* Controller */,
 				BCAC22F625F1F1150057D64A /* Helper */,
 				BCAC22F725F1F11A0057D64A /* Resources */,
+				BCAC234B25F21C680057D64A /* Therap_Test.xcdatamodeld */,
 			);
 			path = Therap_Test;
 			sourceTree = "<group>";
@@ -84,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAC231825F1FBF40057D64A /* Webservices.swift */,
+				BCAC232125F1FF050057D64A /* GitInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAC22FA25F1F16E0057D64A /* Extension.swift */,
+				BCAC234F25F21FBD0057D64A /* Config.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -146,6 +181,7 @@
 		BCAC22F925F1F1550057D64A /* Programatically_created */ = {
 			isa = PBXGroup;
 			children = (
+				BCAC232425F204E10057D64A /* HomeView.swift */,
 			);
 			path = Programatically_created;
 			sourceTree = "<group>";
@@ -167,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCAC22EC25F1F0DC0057D64A /* Build configuration list for PBXNativeTarget "Therap_Test" */;
 			buildPhases = (
+				5AB08593647C98CAE52AA34A /* [CP] Check Pods Manifest.lock */,
 				BCAC22D425F1F0DC0057D64A /* Sources */,
 				BCAC22D525F1F0DC0057D64A /* Frameworks */,
 				BCAC22D625F1F0DC0057D64A /* Resources */,
+				16AA34DFA0D29455711F58C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,18 +266,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16AA34DFA0D29455711F58C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therap_Test/Pods-Therap_Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therap_Test/Pods-Therap_Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therap_Test/Pods-Therap_Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AB08593647C98CAE52AA34A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Therap_Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCAC22D425F1F0DC0057D64A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAC232525F204E10057D64A /* HomeView.swift in Sources */,
+				BCAC232225F1FF050057D64A /* GitInfo.swift in Sources */,
 				BCAC231925F1FBF40057D64A /* Webservices.swift in Sources */,
 				BCAC22E025F1F0DC0057D64A /* HomeVC.swift in Sources */,
+				BCAC235025F21FBD0057D64A /* Config.swift in Sources */,
 				BCAC230D25F1F6510057D64A /* FavouritesVC.swift in Sources */,
 				BCAC22DC25F1F0DC0057D64A /* AppDelegate.swift in Sources */,
 				BCAC22DE25F1F0DC0057D64A /* SceneDelegate.swift in Sources */,
 				BCAC231225F1F6740057D64A /* NotesVC.swift in Sources */,
 				BCAC22FB25F1F16E0057D64A /* Extension.swift in Sources */,
+				BCAC234D25F21C680057D64A /* Therap_Test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +467,7 @@
 		};
 		BCAC22ED25F1F0DC0057D64A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 775FC57AA722C0227E9BDA7B /* Pods-Therap_Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,6 +486,7 @@
 		};
 		BCAC22EE25F1F0DC0057D64A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B002D1CCA38150E9205AE8A /* Pods-Therap_Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -439,6 +525,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCAC234B25F21C680057D64A /* Therap_Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCAC234C25F21C680057D64A /* Therap_Test.xcdatamodel */,
+			);
+			currentVersion = BCAC234C25F21C680057D64A /* Therap_Test.xcdatamodel */;
+			path = Therap_Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCAC22D025F1F0DC0057D64A /* Project object */;
 }
