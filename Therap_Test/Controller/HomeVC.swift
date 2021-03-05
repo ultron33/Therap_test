@@ -34,6 +34,7 @@ class HomeVC: UIViewController {
     //MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showActivityIndicator()
         parse_data()
     }
     
@@ -65,10 +66,12 @@ class HomeVC: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.setup_vews()
+                        self.hideActivityIndicator()
                     }
                 }
             case 400: print("failed to parse")
                 self.showToast(message: "Something went wrong!", font: UIFont.systemFont(ofSize: 12), cardHight: 50, labelHeight: 50, labelWidth: 200)
+                self.hideActivityIndicator()
             default: break
             }
         }
